@@ -11,3 +11,4 @@ package.json
 /logs/test.logfile
 /logs/**/test.logfile
 /logs/
+.gitignore
