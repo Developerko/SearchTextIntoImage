@@ -5,3 +5,9 @@ App_Data/
 UploadImage/
 *.xdt
 *.dll
+config.json
+.json
+package.json
+/logs/test.logfile
+/logs/**/test.logfile
+/logs/
