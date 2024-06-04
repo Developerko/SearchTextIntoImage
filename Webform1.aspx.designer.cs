@@ -1,9 +1,8 @@
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Fetch Text Into Image</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,8 +13,6 @@
         <asp:Button ID="Upload" runat="server" Text="Upload" OnClick="Upload_Click" Width="128px" />
         </p>
         <p>
-           
-          
             <hr /><hr /><br />
         </p>
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -23,7 +20,6 @@
             <ContentTemplate>
                   <asp:Label ID="show" runat="server" Text=""></asp:Label>
               <asp:Timer ID="Timer1" runat="server" Interval="600" OnTick="Timer1_Tick"></asp:Timer>
-               
                 <center>
                     <asp:GridView ID="GridView2" runat="server" Width="1000px" AutoGenerateColumns="False"  CellPadding="4" DataKeyNames="fpath1" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" OnRowCommand="GridView2_RowCommand" OnRowDataBound="GridView2_RowDataBound" Caption="Image Information">
                         <AlternatingRowStyle BackColor="White" />
@@ -57,12 +53,9 @@
                         <SortedDescendingHeaderStyle BackColor="#15524A" />
                     </asp:GridView>
                     <br />
-                   
                     <br />
-                </center>
-                
+                </center>   
           <hr /><hr />
-               
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [FileInfo5]"></asp:SqlDataSource>
               <asp:TextBox ID="txtshow" runat="server" Visible="False"></asp:TextBox>
             </ContentTemplate>
