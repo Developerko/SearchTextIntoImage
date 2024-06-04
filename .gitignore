@@ -1,0 +1,5 @@
+*.config
+obj/
+bin/
+App_Data/
+UploadImage/
