@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
@@ -19,13 +18,10 @@ namespace SearchTextIntoImage
         protected void Page_Load(object sender, EventArgs e)
         {
             
-
-
         }
         protected void Timer1_Tick(object sender, EventArgs e)
         {
             GridView2.DataBind();
-
         }
 
         protected void Upload_Click(object sender, EventArgs e)
@@ -34,19 +30,17 @@ namespace SearchTextIntoImage
             {
                 string filename = Path.GetFileName(postedFile.FileName);
                 String filePath1 = Path.Combine(Server.MapPath("~/UploadImage"), FileUpload1.FileName);
-
                 string filepath = Convert.ToString(System.IO.Directory.GetParent(FileUpload1.PostedFile.FileName));
                 FileUpload1.SaveAs(Server.MapPath("~/UploadImage/") + Path.GetFileName(FileUpload1.FileName));
-              
                 string link = "UploadImage/" + Path.GetFileName(FileUpload1.FileName);
                 using (Stream fs = postedFile.InputStream)
                 {
-                    string query = "insert into FileInfo5(Name1,fpath1,UploadImage5) values (@FileName, @FileParh,@uploadim )";
+                    string query = "insert into FileInfo(Name,fpath,UploadImage) values (@FileName, @FileParh,@uploadim )";
                     SqlCommand cmd = new SqlCommand(query);
                     cmd.Parameters.AddWithValue("@FileName", filename);
                     cmd.Parameters.AddWithValue("@FileParh", filePath1);
                     cmd.Parameters.AddWithValue("@uploadim", link);
-                    string mycon = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"E:\\M.SC.IT\\M.SC.IT Sem-1\\Advance Technology – I (.Net)\\Practical\\Unit-2\\SearchTextIntoImage\\App_Data\\Database1.mdf\";Integrated Security=True";
+                    string mycon = "Enter Your Connection String";
                     SqlConnection con = new SqlConnection(mycon);
                     con.Open();
                     cmd.Connection = con;
@@ -79,11 +73,6 @@ namespace SearchTextIntoImage
                 }
             }
         }
-
-
-
-
-
        
         protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -94,14 +83,13 @@ namespace SearchTextIntoImage
                     int rowIndex2 = Convert.ToInt32(e.CommandArgument);
                     Label lblFetchedText1 = (Label)GridView2.Rows[rowIndex2].FindControl("lblFetchedText1");
                   
-                    string imagePath2 = GridView2.DataKeys[rowIndex2]["fpath1"].ToString();
+                    string imagePath2 = GridView2.DataKeys[rowIndex2]["fpath"].ToString();
                    string imageText1 = FetchTextFromImage2(imagePath2);
                    
                     lblFetchedText1.Text = imageText1;
                     UpdateDatabase1(rowIndex2,imageText1);
                    
                 }
-
             }
             catch(Exception ex)
             {
@@ -135,19 +123,17 @@ namespace SearchTextIntoImage
             }
         }
 
-       
         private void UpdateDatabase1(int index, string imageText1)
         {
             //show.Text = " Update : " + imageText1;
            // show.Text = " id : " + (index + 1);
             // Replace the connection string with your actual database connection string
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"E:\\M.SC.IT\\M.SC.IT Sem-1\\Advance Technology – I (.Net)\\Practical\\Unit-2\\SearchTextIntoImage\\App_Data\\Database1.mdf\";Integrated Security=True";
+            string connectionString = "Enter Your Coonection string";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query1 = "UPDATE FileInfo5 SET Showtext2 = @ImageText1 WHERE imgId = @ImageID1";
+                string query1 = "UPDATE FileInfo SET Showtext = @ImageText1 WHERE imgId = @ImageID1";
                 using (SqlCommand command = new SqlCommand(query1, connection))
                 {
-
                     command.Parameters.AddWithValue("@ImageText1", imageText1);
                     command.Parameters.AddWithValue("@ImageID1", index + 1); // Assuming ImageID is 1-based
 
