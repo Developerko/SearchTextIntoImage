@@ -2,7 +2,7 @@
 <h1>2nd Stemp : Creat Database  </h1><br>
 <h3>Database Name : Database1</h3>h3>
 <h1>3rd step : creat Table </h1>
-<h3>Table Name : FileInfo<h3>
+<h3>Table Name : FileInfo</h3>
   <h2>Following information is help to creat table  </h2>
 <table>
   <tr>
