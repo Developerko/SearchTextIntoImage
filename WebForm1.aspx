@@ -64,7 +64,7 @@
                 
           <hr /><hr />
                
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [FileInfo5]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [FileInfo]"></asp:SqlDataSource>
               <asp:TextBox ID="txtshow" runat="server" Visible="False"></asp:TextBox>
             </ContentTemplate>
         </asp:UpdatePanel>
