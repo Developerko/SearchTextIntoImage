@@ -1,4 +1,4 @@
-<h1>First step : Download the Project </h1><br>
+<h1>1st step : Download the Project </h1><br>
 <h1>2nd Stemp : Creat Database  </h1><br>
 <h3>Database Name : Database1</h3>h3>
 <h1>3rd step : creat Table </h1>
