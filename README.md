@@ -1,7 +1,7 @@
 <h1>1st step : Download the Project </h1><br>
-<h1>2nd Stemp : Creat Database  </h1><br>
+<h1>2nd Step : Create Database  </h1><br>
 <h3>Database Name : Database1</h3><br>
-<h1>3rd step : creat Table </h1>
+<h1>3rd step : create Table </h1>
 <h3>Table Name : FileInfo</h3>
   <h2>Following information is help to creat table  </h2>
 <table>
